@@ -30,13 +30,13 @@ int main(int argc, char** argv) {
 
 	std::string file_path = argv[1];
 	if (file_path.substr(file_path.find_last_of(".") + 1) == "pcd") {
-		if (pcl::io::loadPCDFile<pcl::PointXYZRGB>(argv[1], *cloud) == -1) //* load the file
+		if (pcl::io::loadPCDFile<pcl::PointXYZRGB>(argv[1], *cloud) == -1) //* load the .pcd file
 				{
 			cerr << "Couldn't read file :" << file_path << "\n";
 			return (-1);
 		}
 	} else if (file_path.substr(file_path.find_last_of(".") + 1) == "ply") {
-		if (pcl::io::loadPLYFile<pcl::PointXYZRGB>(argv[1], *cloud) == -1) //* load the file
+		if (pcl::io::loadPLYFile<pcl::PointXYZRGB>(argv[1], *cloud) == -1) //* load the.ply file
 				{
 			cerr << "Couldn't read file :" << file_path << "\n";
 			return (-1);
@@ -46,7 +46,7 @@ int main(int argc, char** argv) {
 		exit(1);
 	}
 
-	std::cout << "Loaded " << cloud->width * cloud->height << " data points from test_pcd.pcd with the following fields: \n";
+	std::cout << "Loaded " << cloud->width * cloud->height << " data points from " << (file_path.substr(file_path.find_last_of("/") + 1)) << " with the following fields: \n";
 
 	// creates the visualization object
 	boost::shared_ptr<pcl::visualization::PCLVisualizer> viewer;
