@@ -8,5 +8,5 @@ include_directories(${PCL_INCLUDE_DIRS})
 link_directories(${PCL_LIBRARY_DIRS})
 add_definitions(${PCL_DEFINITIONS})
 
-#add_executable (Visualizer ../src/Visualizer.cpp)
-#target_link_libraries (Visualizer ${PCL_LIBRARIES})
+add_executable (Visualizer ../src/Visualizer.cpp)
+target_link_libraries (Visualizer ${PCL_LIBRARIES})
