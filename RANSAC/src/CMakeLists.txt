@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 2.8 FATAL_ERROR)
 
-project(PCL_learn)
+project(RANSAC)
 
 find_package(PCL 1.2 REQUIRED)
 
